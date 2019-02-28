@@ -10,4 +10,5 @@ public class PageController {
     public String getMyPage() {
         return "international";
     }
+
 }
