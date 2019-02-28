@@ -11,24 +11,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CloudController {
 
     @ResponseBody
-    @GetMapping("external")
+    @GetMapping("cloud")
     public String getGoogleTranslate() {
 
-        // Instantiates a client
         Translate translate = TranslateOptions.getDefaultInstance().getService();
 
-        // The text to translate
-        String text = "Hello, world!";
+        String textToTranslate = "Hello, world! Llama socks.    Quarter Pounder with Cheese.";
 
-        // Translates some text into Russian
         Translation translation =
                 translate.translate(
-                        text,
+                        textToTranslate,
                         Translate.TranslateOption.sourceLanguage("en"),
-                        Translate.TranslateOption.targetLanguage("ru"));
+                        Translate.TranslateOption.targetLanguage("fr"));
 
 
-        System.out.printf("Text: %s%n", text);
+        System.out.printf("Text: %s%n", textToTranslate);
         System.out.printf("Translation: %s%n", translation.getTranslatedText());
 
         return translation.getTranslatedText();
