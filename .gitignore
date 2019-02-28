@@ -24,3 +24,5 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+out/production/.mvn/maven-wrapper.properties
+out/production/.mvn/maven-wrapper.jar
